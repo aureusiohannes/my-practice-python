@@ -61,3 +61,81 @@ elif function_b != 0 and operator == "-" and secondx == 1 and secondoperator == 
     print(function_a * limit_a - function_b * limit_a - function_c)
 elif function_b != 0 and operator == "-" and secondx == 1 and secondoperator == "-" and exponential != 0:
     print(function_a * (limit_a ** exponential) - function_b * limit_a - function_c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+program calculadora_de_limites;
+
+var
+  limite_a, primeirox, resultado, primeirotermo, segundotermo, terceirotermo, segundox : integer;
+  operador1, operador2 : string;
+
+begin
+  resultado := 0;
+
+  writeln('Qual o a do seu limite? Insira um número inteiro.');
+  readln(limite_a);
+
+  writeln('Qual o seu primeiro termo? O a da sua função. Insira um número inteiro.');
+  readln(primeirotermo);
+
+  writeln('A sua função tem um x depois do primeiro termo? Se sim, insira 1. Se não, insira 0.');
+  readln(primeirox);
+
+  writeln('Tem algum operador depois do seu primeiro x? Se sim, insira + ou -. Se não, insira 0.');
+  readln(operador1);
+
+  writeln('Se você respondeu que havia um operador, insira o seu segundo termo. Se não tiver nenhum termo, insira 0.');
+  readln(segundotermo);
+
+  writeln('Há um segundo x? Se sim, insira 1. Se não, insira 0.');
+  readln(segundox);
+
+  writeln('Há um operador depois do seu segundo x? Se sim, insira + ou -. Se não, insira 0.');
+  readln(operador2);
+
+  writeln('Se você respondeu que há um operador depois do seu segundo x, insira o seu terceiro termo. Se não, insira 0.');
+  readln(terceirotermo);
+
+  if primeirotermo <> 0 then
+     resultado := resultado + primeirotermo;
+
+  if (limite_a <> 0) and (primeirox <> 0) then
+     resultado := resultado * limite_a;
+
+  if (operador1 <> '0') and (segundotermo <> 0) and (segundox = 0) then
+  begin
+      if operador1 = '+' then
+          resultado := resultado + segundotermo;
+      if operador1 = '-' then
+          resultado := resultado - segundotermo;
+  end;
+
+  if (segundox <> 0) and (operador1 <> '0') then
+  begin
+      if operador1 = '+' then
+          resultado := resultado + (segundotermo * limite_a);
+      if operador1 = '-' then
+          resultado := resultado - (segundotermo * limite_a);
+  end;
+
+  if (operador2 <> '0') and (terceirotermo <> 0) then
+  begin
+      if operador2 = '+' then
+          resultado := resultado + terceirotermo;
+      if operador2 = '-' then
+          resultado := resultado - terceirotermo;
+  end;
+
+  writeln('Resultado do limite: ', resultado);
+end.
