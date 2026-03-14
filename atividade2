@@ -1,0 +1,33 @@
+# Questão 1
+
+def programa(horas):
+    resultado = horas/3.6
+    return resultado
+
+print(programa(int(input('Insira o módulo da velocidade em km/h: '))))
+
+# Questão 2
+
+dividendo = int(input('Insira o dividendo.'))
+divisor = int(input('Insira o divisor.'))
+q = dividendo//divisor
+r = dividendo%divisor
+
+print(f'{dividendo} = {q}*{divisor}+{r}')
+
+# Questão 3
+
+a = 12
+f = 6
+v = a+2-f
+
+print(v)
+
+# Questão 4
+
+import math
+
+a = int(input('Insira o seu primeiro cateto.'))
+b = int(input('Insira o seu segundo cateto.'))
+h = math.sqrt((a**2)+(b**2))
+print(f'A sua hipotenusa é {h}')
